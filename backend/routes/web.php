@@ -21,3 +21,5 @@ $router->get('/products', 'ProductController@index');
 $router->post('/products', 'ProductController@store');
 $router->put('/products/{id}', 'ProductController@update');
 $router->delete('/products/{id}', 'ProductController@destroy');
+
+$router->get('/orders', 'OrderController@index');
