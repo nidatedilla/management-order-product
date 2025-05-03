@@ -20,3 +20,4 @@ $router->get('/', function () use ($router) {
 $router->get('/products', 'ProductController@index');
 $router->post('/products', 'ProductController@store');
 $router->put('/products/{id}', 'ProductController@update');
+$router->delete('/products/{id}', 'ProductController@destroy');
