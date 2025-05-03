@@ -19,6 +19,10 @@ date_default_timezone_set(env('APP_TIMEZONE', 'UTC'));
 |
 */
 
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: Origin, Content-Type, Authorization");
+header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
+
 $app = new Laravel\Lumen\Application(
     dirname(__DIR__)
 );
