@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
@@ -17,5 +18,17 @@ class ProductController extends Controller
         }
 
         return response()->json($products);
+    }
+
+    public function store(Request $request)
+    {
+        $this->validate($request, [
+            'name'  => 'required|string|min:3',
+            'price' => 'required|numeric|gt:0',
+            'stock' => 'required|integer|min:0',
+        ]);
+
+        $product = Product::create($request->all());
+        return response()->json($product, 201);
     }
 }
