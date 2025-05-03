@@ -31,4 +31,13 @@ class ProductController extends Controller
         $product = Product::create($request->all());
         return response()->json($product, 201);
     }
+
+    public function update(Request $request, $id)
+    {
+        $product = Product::find($id);
+        if (!$product) return response()->json(['message' => 'Product not found'], 404);
+
+        $product->update($request->all());
+        return response()->json($product);
+    }
 }
