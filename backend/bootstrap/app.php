@@ -33,7 +33,11 @@ $app->withEloquent();
 
 $app->configure('jwt');
 
+$app->configure('auth');
+
 $app->register(Tymon\JWTAuth\Providers\LumenServiceProvider::class);
+
+$app->register(App\Providers\AuthServiceProvider::class);
 
 /*
 |--------------------------------------------------------------------------
