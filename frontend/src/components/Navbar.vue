@@ -11,6 +11,11 @@
             ><LucideBox class="icon" /> Produk</router-link
           >
         </li>
+        <li>
+          <router-link to="/orders" class="nav-link"
+            ><LucideList class="icon" /> Pesanan</router-link
+          >
+        </li>
       </ul>
       <div class="navbar-toggle" @click="toggleMenu">
         <LucideMenu class="icon" />
@@ -23,6 +28,11 @@
           <li>
             <router-link to="/products" @click="closeMenu" class="nav-link"
               ><LucideBox class="icon" /> Produk</router-link
+            >
+          </li>
+          <li>
+            <router-link to="/orders" @click="closeMenu" class="nav-link"
+              ><LucideList class="icon" /> Pesanan</router-link
             >
           </li>
         </ul>
