@@ -94,6 +94,7 @@ export default createStore({
         commit("setLoading", false);
       }
     },
+
     async fetchOrderDetails({ commit }, orderId) {
       commit("setLoading", true);
       try {
@@ -111,6 +112,17 @@ export default createStore({
         console.error("Error fetching order details:", error);
       } finally {
         commit("setLoading", false);
+      }
+    },
+
+    async createOrder({ commit, dispatch }, order) {
+      try {
+        const response = await api.post("/orders", order);
+        dispatch("fetchOrders");
+        return response;
+      } catch (error) {
+        console.error("Error creating order:", error);
+        throw error;
       }
     },
   },

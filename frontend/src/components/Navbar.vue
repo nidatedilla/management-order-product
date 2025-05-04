@@ -16,6 +16,11 @@
             ><LucideList class="icon" /> Pesanan</router-link
           >
         </li>
+        <li>
+          <router-link to="/add-order" class="nav-link"
+            ><LucidePlusCircle class="icon" /> Tambah</router-link
+          >
+        </li>
       </ul>
       <div class="navbar-toggle" @click="toggleMenu">
         <LucideMenu class="icon" />
@@ -33,6 +38,11 @@
           <li>
             <router-link to="/orders" @click="closeMenu" class="nav-link"
               ><LucideList class="icon" /> Pesanan</router-link
+            >
+          </li>
+          <li>
+            <router-link to="/add-order" @click="closeMenu" class="nav-link"
+              ><LucidePlusCircle class="icon" /> Tambah</router-link
             >
           </li>
         </ul>
