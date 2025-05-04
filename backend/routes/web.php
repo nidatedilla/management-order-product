@@ -29,3 +29,9 @@ $router->delete('/products/{id}', 'ProductController@destroy');
 $router->get('/orders', 'OrderController@index');
 $router->get('/orders/{id}', 'OrderController@show');
 $router->post('/orders', 'OrderController@store');
+
+$router->post('/register', 'AuthController@register');
+$router->post('/login', 'AuthController@login');
+$router->group(['middleware' => 'auth.jwt'], function () use ($router) {
+    $router->get('/profile', 'AuthController@profile');
+});
