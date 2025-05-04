@@ -31,7 +31,9 @@ $app->withFacades();
 
 $app->withEloquent();
 
-$app->register(Illuminate\Database\MigrationServiceProvider::class);
+$app->configure('jwt');
+
+$app->register(Tymon\JWTAuth\Providers\LumenServiceProvider::class);
 
 /*
 |--------------------------------------------------------------------------
