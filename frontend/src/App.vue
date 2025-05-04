@@ -1,12 +1,19 @@
 <template>
-  <div id="app" class="app-container">
-    <router-view></router-view>
+  <div class="app-container">
+    <Navbar />
+    <main class="main-content">
+      <router-view />
+    </main>
   </div>
 </template>
 
 <script>
+import Navbar from "./components/Navbar.vue";
+
 export default {
-  name: "App",
+  components: {
+    Navbar,
+  },
 };
 </script>
 
@@ -18,5 +25,10 @@ export default {
   font-family: "Segoe UI", sans-serif;
   display: flex;
   flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  padding: 24px;
 }
 </style>
