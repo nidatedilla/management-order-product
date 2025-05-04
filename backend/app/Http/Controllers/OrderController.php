@@ -25,6 +25,21 @@ class OrderController extends Controller
         ]);
     }
 
+    public function show($id)
+    {
+        $order = Order::with(['items.product'])->find($id);
+
+        if (!$order) {
+            return response()->json([
+                'message' => 'Order not found.'
+            ], 404);
+        }
+
+        return response()->json([
+            'data' => $order
+        ]);
+    }
+
     public function store(Request $request)
     {
         $this->validate($request, [
