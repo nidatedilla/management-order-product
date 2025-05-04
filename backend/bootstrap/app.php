@@ -39,6 +39,12 @@ $app->register(Tymon\JWTAuth\Providers\LumenServiceProvider::class);
 
 $app->register(App\Providers\AuthServiceProvider::class);
 
+$app->routeMiddleware([
+    'auth.jwt' => App\Http\Middleware\Authenticate::class,
+]);
+
+class_alias(Tymon\JWTAuth\Facades\JWTAuth::class, 'JWTAuth');
+
 /*
 |--------------------------------------------------------------------------
 | Register Container Bindings
